@@ -14,7 +14,7 @@ def process_fasta(fname, c1, c2, filter_txt=None):
     else:
         chroms = [GB for GB in genome]
     genome = ''.join([i.seq.__str__() for i in chroms])
-    genome_chunks = [genome[i:i+c1] for i in range(0, len(genome), c1) if not 'N' in genome[i:i+c1]]
+    genome_chunks = [genome[i:i+c1] for i in range(0, len(genome), c1) if not 'N' in genome[i:i+c1] and set(genome[i:i+c1])==set('ATGC')]
     clean_genome = ''.join(genome_chunks)
     data = [clean_genome[i:i+c2] for i in range(0, len(clean_genome), c2)]
     
