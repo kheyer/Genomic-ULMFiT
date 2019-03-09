@@ -22,19 +22,22 @@ __Human 1__ details baseline models for the short and long promoter datasets - n
 
 __Human 2__ details training a genomic language model on the human genome.
 
-__human 3__ details using the genomic language model to initialize a classification model trained on the short promoter dataset.
+__Human 3__ details using the genomic language model to initialize a classification model trained on the short promoter dataset.
 
-__human 4__ details using the genomic language model to initialize a classification model trained on the long promoter dataset.
+__Human 4__ details adding fine tuning to the model from __Human 3__, completing the full ULMFiT process.
+
+__Human 5__ details using the genomic language model to initialize a classification model trained on the long promoter dataset.
 
 ## Results and Comparisons
 
 For the short promoter dataset:
 
-| Model            	| DNA Size 	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	| Specificity 	|
-|------------------	|----------	|----------	|-----------	|--------	|-------------------------	|-------------	|
-| Kh et al.        	| -200/50  	| -        	| -         	| __0.9__    	| __0.89__                    	| 0.98        	|
-| Naive Model      	| -200/50  	| 0.80     	| 0.74      	| 0.80   	| 0.59                    	| 0.80        	|
-| With Pretraining 	| -200/50  	| __0.92__     	| __0.96__      	| 0.85   	| 0.84                    	| 0.98        	|
+| Model                            	| DNA Size 	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	| Specificity 	|
+|----------------------------------	|----------	|----------	|-----------	|--------	|-------------------------	|-------------	|
+| Kh et al.                        	| -200/50  	| -        	| -         	| 0.9    	| 0.89                    	| __0.98__        	|
+| Naive Model                      	| -200/50  	| 0.80     	| 0.74      	| 0.80   	| 0.59                    	| 0.80        	|
+| With Pretraining                 	| -200/50  	| 0.922    	| __0.963__     	| 0.849  	| 0.844                   	| 0.976       	|
+| With Pretraining and Fine Tuning 	| -200/50  	| __.977__     	| .959      	| __.989__   	| __.955__                    	| .969        	|
 
 For the long promoter dataset:
 
