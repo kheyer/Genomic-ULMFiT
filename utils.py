@@ -13,7 +13,7 @@ def process_fasta(fname, c1, c2, filter_txt=None):
         chroms = [GB for GB in genome if 'NC_' in GB.id]
     else:
         chroms = [GB for GB in genome]
-    genome = ''.join([i.seq.__str__() for i in chroms])
+    genome = ''.join([i.seq.__str__() for i in chroms]).upper()
     genome_chunks = [genome[i:i+c1] for i in range(0, len(genome), c1) if not 'N' in genome[i:i+c1] and set(genome[i:i+c1])==set('ATGC')]
     clean_genome = ''.join(genome_chunks)
     data = [clean_genome[i:i+c2] for i in range(0, len(clean_genome), c2)]
@@ -168,6 +168,7 @@ def get_scores(learn, ret=False):
     print(f'False Negatives: {fn/len(y)}')
     print(f'Recall: {tp / (tp + fn)}')
     print(f'Precision: {tp / (tp + fp)}')
+    print(f'Specificity: {tn / (tn + fp)}')
     print(f'MCC: {cc}')
 
     if ret:
