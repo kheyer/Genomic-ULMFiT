@@ -5,7 +5,8 @@ These notebooks detail using the ULMFiT method to train a promoter classifier ba
 The ULMFiT process consists of several stages. First a language model is trained in an unsupervised fashion, using a string of tokens 
 as input to predict the next token. Then a classification model is initialized with the pretrained weights from the language model.
 
-These notebooks build up to this final procedure in several steps. In __E. coli 1__ we train a model using only the classification 
+These notebooks build up to this final procedure in several steps. __E. coli 0__ details extracting promoter sequences and negative 
+examples from the E. coli genome. In __E. coli 1__ we train a model using only the classification 
 dataset - no pretraining. In __E. coli 2__ we train a language model on the E. coli genome. We then transfer the weights from the 
 language model to the classification model. In __E. coli 3__ we use a much larger genomic corpus from several species of bacteria to 
 train a better language model as the basis for the classification model. Progressing through this sequence of 
