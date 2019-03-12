@@ -42,12 +42,13 @@ For the short promoter dataset:
 
 For the long promoter dataset:
 
-| Model            	| DNA Size  	| Models           	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	|
-|------------------	|-----------	|------------------	|:--------:	|:---------:	|:------:	|:-----------------------:	|
-| Umarov et al.    	| -1000/500 	| 2 Model Ensemble 	|     -    	|   0.636   	|  0.802 	|          0.714          	|
-| Umarov et al.    	|  -200/400 	| 2 Model Ensemble 	|     -    	|   0.769   	|  0.755 	|          0.762          	|
-| Naive Model      	|  -500/500 	| Single Model     	|   0.858  	|   0.877   	|  0.772 	|          0.708          	|
-| With Pretraining 	|  -500/500 	| Single Model     	|   __0.888__  	|    __0.90__   	|  __0.824__ 	|          __0.770__          	|
+| Model                            	| DNA Size  	| Models           	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	|
+|----------------------------------	|-----------	|------------------	|----------	|-----------	|--------	|-------------------------	|
+| Umarov et al.                    	| -1000/500 	| 2 Model Ensemble 	|     -    	|   0.636   	|  0.802 	|          0.714          	|
+| Umarov et al.                    	|  -200/400 	| 2 Model Ensemble 	|     -    	|   0.769   	|  0.755 	|          0.762          	|
+| Naive Model                      	|  -500/500 	|   Single Model   	|   0.858  	|   0.877   	|  0.772 	|          0.708          	|
+| With Pretraining                 	|  -500/500 	|   Single Model   	|   0.888  	|    __0.90__   	|  0.824 	|          0.770          	|
+| With Pretraining and Fine Tuning 	|  -500/500 	|   Single Model   	|   __0.889__  	|   0.886   	|  __0.846__ 	|          __0.772__          	|
 
 
 
