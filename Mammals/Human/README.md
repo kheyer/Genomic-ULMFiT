@@ -28,6 +28,8 @@ __Human 4__ details adding fine tuning to the model from __Human 3__, completing
 
 __Human 5__ details using the genomic language model to initialize a classification model trained on the long promoter dataset.
 
+__Human 6__ details fine tuning the model from __Human 5__, similar to __Human 4__
+
 ## Results and Comparisons
 
 For the short promoter dataset:
