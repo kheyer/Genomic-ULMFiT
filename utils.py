@@ -77,7 +77,7 @@ def _genomic_join_texts(texts:Collection[str], mark_fields:bool=False):
     df = pd.DataFrame({i:texts[:,i] for i in range(texts.shape[1])})
     text_col = f'{BOS} {FLD} {1} ' + df[0].astype(str) if mark_fields else  '' + df[0].astype(str)
     for i in range(1,len(df.columns)):
-        text_col += (f' {FLD} {i+1} ' if mark_fields else '') + df[i].astype(str)   
+        text_col += (f' {FLD} {i+1} ' if mark_fields else ' ') + df[i].astype(str)   
     return text_col.values
 
 class GenomicTokenizeProcessor(PreProcessor):
@@ -174,7 +174,7 @@ def get_scores(learn, ret=False):
     if ret:
         return preds
 
-def get_model_LM(data, drop_mult, config):
+def get_model_LM(data, drop_mult, config, wd=1e-2):
     vocab_size = len(data.vocab.stoi)
     for k in config.keys(): 
         if k.endswith('_p'): config[k] *= drop_mult
@@ -185,7 +185,7 @@ def get_model_LM(data, drop_mult, config):
     emb_sz = config['emb_sz']
     decoder = LinearDecoder(vocab_size, emb_sz, output_p, tie_encoder=enc, bias=True)
     model = SequentialRNN(encoder, decoder)
-    learn = LanguageLearner(data, model, split_func=awd_lstm_lm_split)
+    learn = LanguageLearner(data, model, split_func=awd_lstm_lm_split, wd=wd)
     
     return learn
 
