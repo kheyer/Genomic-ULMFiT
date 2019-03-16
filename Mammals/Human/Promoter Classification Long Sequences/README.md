@@ -28,7 +28,7 @@ Results compared to Umarov et al.:
 | Umarov et al.                           	| -1000/500 	|      -      	| 2 Model Ensemble 	|     -    	|   0.636   	|  0.802 	|          0.714          	|
 | Umarov et al.                           	|  -200/400 	|      -      	| 2 Model Ensemble 	|     -    	|   0.769   	|  0.755 	|          0.762          	|
 | Naive Model                             	|  -500/500 	|     5/2     	|   Single Model   	|   0.858  	|   0.877   	|  0.772 	|          0.708          	|
-| With Pretraining                        	|  -500/500 	|     5/2     	|   Single Model   	|   0.888  	|    0.90   	|  0.824 	|          0.770          	|
+| With Pretraining                        	|  -500/500 	|     5/2     	|   Single Model   	|   0.888  	|    __0.90__   	|  0.824 	|          0.770          	|
 | With Pretraining and Fine Tuning (5mer) 	|  -500/500 	|     5/2     	|   Single Model   	|   0.889  	|   0.886   	|  0.846 	|          0.772          	|
 | With Pretraining and Fine Tuning (4mer) 	|  -500/500 	|     4/2     	|   Single Model   	|   __0.892__  	|   0.877   	|  __0.865__ 	|          __0.778__          	|
-| With Pretraining and Fine Tuning (8mer) 	|  -500/500 	|     8/3     	|   Single Model   	|   0.874  	|   __0.889__   	|  0.802 	|          0.742          	|
+| With Pretraining and Fine Tuning (8mer) 	|  -500/500 	|     8/3     	|   Single Model   	|   0.874  	|   0.889   	|  0.802 	|          0.742          	|
