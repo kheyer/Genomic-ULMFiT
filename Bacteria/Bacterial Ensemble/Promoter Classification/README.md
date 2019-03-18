@@ -15,3 +15,5 @@ comparison between methods and ananlysis of results.
 | Genomic-ULMFiT 	| E. coli     	|        2936       	|   0.956  	|   0.917   	|  0.880 	|          __0.871__          	|    __0.977__    	|
 | Kh. et al.     	| B. subtilis 	|        1050       	|     -    	|     -     	|  __0.91__  	|           __0.86__          	|     0.95    	|
 | Genomic-ULMFiT 	| B. subtilis 	|        1050       	|   0.905  	|   0.857   	|  0.789 	|          0.759          	|     0.95    	|
+
+We see that when data is limited, CNN based methods perform better. However, with as few as 3000 labeled examples, LSTM based methods can reach comprable or superior performance to CNNs. I think this shows the advantage of using transfer learning and training on large, general genomic corpuses. I expect training a LSTM from scratch on such a small dataset would have produced much worse results. Additionally the source data was made up of small 81 bp sequences. I would expect LSTMs to perform better over long sequences with more complex dependencies.
