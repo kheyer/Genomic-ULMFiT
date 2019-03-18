@@ -1,4 +1,4 @@
-# Human Promoter Classification Notebooks
+# Human Genome Notebooks
 
 These notebooks detail training classification models for human promoter sequences using the ULMFiT approach. These notebooks assume you 
 are already familiar with the technique as applied to genomic data. If you are not, see the [E. coli Notebook Series](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Bacteria/E.%20Coli) 
