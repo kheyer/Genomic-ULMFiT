@@ -8,7 +8,7 @@ __Genomic Language Models__ contains notebooks detailing training the bacterial 
 
 __Promoter Classification__ contains notebooks training classification models for bacterial promoters. This directory includes a notebook comparing performance of Genomic-ULMFiT to a CNN-based method used by Kh et al in [Recognition of prokaryotic and eukaryotic promoters using convolutional deep learning neural networks](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0171410).
 
-__Metagenomics__ contains notebooks training metagenomic classification models in a comparison to [Deep learning models for bacteria taxonomic classification of metagenomic data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6069770/) by Fiannaca et al.
+__Metagenomics Classification__ contains notebooks training metagenomic classification models in a comparison to [Deep learning models for bacteria taxonomic classification of metagenomic data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6069770/) by Fiannaca et al.
 
 ## Results Summary
 
