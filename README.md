@@ -13,8 +13,10 @@ Typical deep learning approaches to genomics classification are highly restricte
 
 This method is still in development, but here are some preliminary results, both positive and negative:
 
-#### Promoter Classification
 
+## Promoter Classification
+
+#### E. coli promoters
 The Genomic-ULMFiT method performs well at the task of classifying promoter sequences from random sections of the genome. The process of unsupervised pretraining and fine-tuning has a clear impact on the performance of the classification model
 
   | Model                        	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	|
@@ -22,10 +24,14 @@ The Genomic-ULMFiT method performs well at the task of classifying promoter sequ
   | Naive                        	|   0.834  	|   0.847   	|  0.816 	|          0.670          	|
   | E. coli genome pretraining   	|   0.919  	|   0.941   	|  0.893 	|          0.839          	|
   | Genomic ensemble pretraining 	|   0.973  	|   0.980   	|  0.966 	|          0.947          	|
+ 
+Data generation described in [notebook](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Bacteria/E.%20Coli/E.%20coli%200%20Data%20Processing.ipynb)
   
-  Classification performance on human promoters is competitive with published results
   
-  For the short promoter sequences:
+Classification performance on human promoters is competitive with published results
+
+#### Human Promoters (short)
+For the short promoter sequences, using data from [Recognition of Prokaryotic and Eukaryotic Promoters using Convolutional Deep Learning Neural Networks](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0171410):
 
 | Model                            	| DNA Size 	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	| Specificity 	|
 |----------------------------------	|----------	|----------	|-----------	|--------	|-------------------------	|-------------	|
@@ -34,7 +40,10 @@ The Genomic-ULMFiT method performs well at the task of classifying promoter sequ
 | With Pretraining                 	| -200/50  	|   0.922  	|   __0.963__   	|  0.849 	|          0.844          	|    0.976    	|
 | With Pretraining and Fine Tuning 	| -200/50  	|   __.977__   	|    .959   	|  __.989__  	|           __.955__          	|     .969    	|
 
-For the long promoter sequences:
+[Data Source](https://github.com/solovictor/CNNPromoterData)
+
+#### Human Promoters (long)
+For the long promoter sequences, using data from [PromID: Human Promoter Prediction by Deep Learning](https://arxiv.org/pdf/1810.01414.pdf):
 
 | Model                            	| DNA Size  	| Models           	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	|
 |----------------------------------	|-----------	|------------------	|----------	|-----------	|--------	|-------------------------	|
@@ -44,18 +53,37 @@ For the long promoter sequences:
 | With Pretraining                 	|  -500/500 	|   Single Model   	|   0.888  	|    __0.90__   	|  0.824 	|          0.770          	|
 | With Pretraining and Fine Tuning 	|  -500/500 	|   Single Model   	|   __0.892__  	|   0.877   	|  __0.865__ 	|          __0.778__          	|
 
-When training on really small datasets, CNN based methods can sometimes perform better.
+Data generation described in [notebook](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Mammals/Human/Promoter%20Classification%20Long%20Sequences/Human%20Promoters%20Long%20Sequences%200%20Data%20Processing.ipynb)
+
+#### Other Bacterial Promoters
+This table shows results on data from [Recognition of prokaryotic and eukaryotic promoters using convolutional deep learning neural networks](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0171410). These results show how CNN based methods can sometimes perform better when training on small datasets.
 
 | Method         	| Organism    	| Training Examples 	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	| Specificity 	|
 |----------------	|-------------	|-------------------	|----------	|-----------	|--------	|-------------------------	|-------------	|
-| Kh. et al.     	| E. coli     	|        2936       	|     -    	|     -     	|  __0.90__  	|           0.84          	|     0.96    	|
+| Kh et al.     	| E. coli     	|        2936       	|     -    	|     -     	|  __0.90__  	|           0.84          	|     0.96    	|
 | Genomic-ULMFiT 	| E. coli     	|        2936       	|   0.956  	|   0.917   	|  0.880 	|          __0.871__          	|    __0.977__    	|
-| Kh. et al.     	| B. subtilis 	|        1050       	|     -    	|     -     	|  __0.91__  	|           __0.86__          	|     0.95    	|
+| Kh et al.     	| B. subtilis 	|        1050       	|     -    	|     -     	|  __0.91__  	|           __0.86__          	|     0.95    	|
 | Genomic-ULMFiT 	| B. subtilis 	|        1050       	|   0.905  	|   0.857   	|  0.789 	|          0.759          	|     0.95    	|
 
-#### Enhancer Classification
+[Data Source](https://github.com/solovictor/CNNPromoterData)
 
-Enhancer classification with Genomic-ULMFiT has proven difficult. Work on this domain is ongoing.
+
+## Metaganomics Classification
+
+Genomic-ULMFiT shows improved performance on the metagenomics taxonomic dataset from [Deep learning models for bacteria taxonomic classification of metagenomic data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6069770/).
+
+| Method          	| Data Source 	| Accuracy 	| Precision 	| Recall 	| F1    	|
+|-----------------	|-------------	|----------	|-----------	|--------	|-------	|
+| Fiannaca et al. 	| Amplicon    	| .9137    	| .9162     	| .9137  	| .9126 	|
+| Genomic-ULMFiT  	| Amplicon    	| __.9150__    	| __.9309__     	| __.9263__  	| __.9230__ 	|
+| Fiannaca et al. 	| Shotgun     	| .8550    	| .8570     	| .8520  	| .8511 	|
+| Genomic-ULMFiT  	| Shotgun     	| __.8582__    	| __.8631__     	| __.8566__  	| __.8569__ 	|
+
+[Data Source](https://github.com/IcarPA-TBlab/MetagenomicDC)
+
+
+## Enhancer Classification
+When trained on a dataset of mammalian enhancer sequences from [Enhancer Identification using Transfer and Adversarial Deep Learning of DNA Sequences](https://www.biorxiv.org/content/biorxiv/early/2018/02/14/264200.full.pdf), Genomic_ULMFiT is unable to compete with the results of Cohn et al. Work on this domain is ongoing.
 
 | Model                	| Human 	| Mouse 	|  Dog  	| Opossum 	|
 |----------------------	|:-----:	|:-----:	|:-----:	|:-------:	|
@@ -63,15 +91,16 @@ Enhancer classification with Genomic-ULMFiT has proven difficult. Work on this d
 | 4-mer Genomic-ULMFiT 	| 0.809 	| 0.863 	| 0.790 	|  0.799  	|
 | 5-mer Genomic-ULMFiT 	| 0.801 	| 0.861 	| 0.784 	|  0.796  	|
 
+[Data Source](https://github.com/cohnDikla/enhancer_CNN)
 
-### Upcoming Experiments
+
+## Upcoming Experiments
 
 There are a number of other genomic classification domains I intend to explore when time permits.
-  * Metagenomic Classification
   * CRISPR guide scoring
   * Classification from raw NGS data
   
-### Relevant Literature
+## Relevant Literature
 
 I'm planning on doing a more structured literature review of deep learning for genomic classification and how they compare to Genomic_ULMFiT. For now, here are links to relevant papers.
 
