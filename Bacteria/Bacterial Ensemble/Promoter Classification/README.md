@@ -7,7 +7,7 @@ used in [Recognition of prokaryotic and eukaryotic promoters using convolutional
 by Kh. et al. Two models are trained - one for E. coli promoters and another for B. subtilis promoters. See the notebook for a more detailed 
 comparison between methods and ananlysis of results.
 
-#### Results Summary
+### Results Summary
 
 | Method         	| Organism    	| Training Examples 	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	| Specificity 	|
 |----------------	|-------------	|-------------------	|----------	|-----------	|--------	|-------------------------	|-------------	|
