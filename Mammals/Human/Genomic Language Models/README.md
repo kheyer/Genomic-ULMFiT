@@ -13,3 +13,5 @@ __LM 1__ trains a model with k-mer length 4 and stride 2.
 __LM 2__ trains a model with k-mer length 5 and stride 2.
 
 __LM 3__ trains a model with k-mer length 8 and stride 3.
+
+__LM 4__ trains a model with k-mer length 5 and stride 1
