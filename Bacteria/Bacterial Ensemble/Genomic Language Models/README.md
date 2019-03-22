@@ -8,4 +8,8 @@ the input genomic sequences are broken into chunks of length k base pairs with a
 
 __LM 0__ details processing the bacterial genomes into a form we can feed into a model. See the notebook for a list of bacterial species used
 
-__LM 1__ trains a model with k-mer length 5 and stride 2.
+__LM 1__ trains a model with k-mer length 5 and stride 2
+
+__LM 2__ trains a model with k-mer length 5 and stride 1
+
+__LM 3__ trains a model with k-mer length 3 and stride 1
