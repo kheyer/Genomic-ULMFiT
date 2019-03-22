@@ -27,6 +27,6 @@ __Metagenomics Classification__ contains notebooks training metagenomic classifi
 | Method          	| Data Source 	| Accuracy 	| Precision 	| Recall 	| F1    	|
 |-----------------	|-------------	|----------	|-----------	|--------	|-------	|
 | Fiannaca et al. 	| Amplicon    	| .9137    	| .9162     	| .9137  	| .9126 	|
-| Genomic-ULMFiT  	| Amplicon    	| __.9150__    	| __.9309__     	| __.9263__  	| __.9230__ 	|
+| Genomic-ULMFiT  	| Amplicon    	| __.9239__    	| __.9402__     	| __.9332__  	| __.9306__ 	|
 | Fiannaca et al. 	| Shotgun     	| .8550    	| .8570     	| .8520  	| .8511 	|
-| Genomic-ULMFiT  	| Shotgun     	| __.8582__    	| __.8631__     	| __.8566__  	| __.8569__ 	|
+| Genomic-ULMFiT  	| Shotgun     	| __.8797__    	| __.8824__     	| __.8769__  	| __.8758__ 	|
