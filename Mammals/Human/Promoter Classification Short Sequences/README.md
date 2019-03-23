@@ -11,8 +11,11 @@ Notebook __1__ trains a naive baseline model. This model trains from scratch usi
 
 Notebook __2__ trains the classification model initialized with a pretrained [human genome language model](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Mammals/Human/Genomic%20Language%20Models).
 
-Notebook __3__ first fine tunes the human genome language model on the promoter corpus, then trains a classification model intitialized with 
-the fine tuned language model.
+Notebook __3__ first fine tunes the human genome language model on the promoter corpus, then trains a classification model intitialized with the fine tuned language model.
+
+Notebook __4__ follows the same procedure as Notebook 3 using a kmer 5 stride 1 model
+
+Notebook __5__ follows the same procedure as Notebook 4 using a kmer 3 stride 1 model
 
 The results of these notebooks are compared to the results from Kh. et al.:
 
