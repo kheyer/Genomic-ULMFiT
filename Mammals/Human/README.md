@@ -25,12 +25,14 @@ examples are taken randomly from genomic regions between TSS sites.
 
 For the short promoter dataset:
 
-| Model                            	| DNA Size 	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	| Specificity 	|
-|----------------------------------	|----------	|----------	|-----------	|--------	|-------------------------	|-------------	|
-| Kh et al.                        	| -200/50  	|     -    	|     -     	|   0.9  	|           0.89          	|     __0.98__    	|
-| Naive Model                      	| -200/50  	|   0.80   	|    0.74   	|  0.80  	|           0.59          	|     0.80    	|
-| With Pretraining                 	| -200/50  	|   0.922  	|   __0.963__   	|  0.849 	|          0.844          	|    0.976    	|
-| With Pretraining and Fine Tuning 	| -200/50  	|   __.977__   	|    .959   	|  __.989__  	|           __.955__          	|     .969    	|
+| Model                            	| DNA Size 	| kmer/stride 	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	| Specificity 	|
+|----------------------------------	|----------	|-------------	|----------	|-----------	|--------	|-------------------------	|-------------	|
+| Kh et al.                        	| -200/50  	|      -      	|     -    	|     -     	|   0.9  	|           0.89          	|     0.98    	|
+| Naive Model                      	| -200/50  	|     5/2     	|   0.80   	|    0.74   	|  0.80  	|           0.59          	|     0.80    	|
+| With Pretraining                 	| -200/50  	|     5/2     	|   0.922  	|   0.963   	|  0.849 	|          0.844          	|    0.976    	|
+| With Pretraining and Fine Tuning 	| -200/50  	|     5/2     	|   .977   	|    .959   	|  .989  	|           .955          	|     .969    	|
+| With Pretraining and Fine Tuning 	| -200/50  	|     5/1     	|   .990   	|    .983   	|  .995  	|           .981          	|     .987    	|
+| With Pretraining and Fine Tuning 	| -200/50  	|     3/1     	|   __.995__   	|    __.992__   	|  __.996__  	|           __.991__          	|     __.994__    	|
 
 
 For the long promoter dataset:
