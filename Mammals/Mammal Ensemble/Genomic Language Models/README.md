@@ -13,3 +13,5 @@ __LM 0__ details processing genomes from [H. sapiens](https://www.ncbi.nlm.nih.g
 __LM 1__ trains a model with k-mer length 5 and stride 2.
 
 __LM 2__ trains a model with k-mer length 4 and stride 2.
+
+__LM 3__ trains a model with k-mer length 3 and stride 1.
