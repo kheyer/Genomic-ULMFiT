@@ -85,13 +85,14 @@ Genomic-ULMFiT shows improved performance on the metagenomics taxonomic dataset 
 
 
 ## Enhancer Classification
-When trained on a dataset of mammalian enhancer sequences from [Enhancer Identification using Transfer and Adversarial Deep Learning of DNA Sequences](https://www.biorxiv.org/content/biorxiv/early/2018/02/14/264200.full.pdf), Genomic_ULMFiT is unable to compete with the results of Cohn et al. Work on this domain is ongoing.
+When trained on a dataset of mammalian enhancer sequences from [Enhancer Identification using Transfer and Adversarial Deep Learning of DNA Sequences](https://www.biorxiv.org/content/biorxiv/early/2018/02/14/264200.full.pdf), Genomic_ULMFiT improves on results from Cohn et al.
 
-| Model                	| Human 	| Mouse 	|  Dog  	| Opossum 	|
-|----------------------	|:-----:	|:-----:	|:-----:	|:-------:	|
-| Cohn et al.          	| __0.975__ 	| __0.965__ 	| __0.963__ 	|  __0.946__  	|
-| 4-mer Genomic-ULMFiT 	| 0.809 	| 0.863 	| 0.790 	|  0.799  	|
-| 5-mer Genomic-ULMFiT 	| 0.801 	| 0.861 	| 0.784 	|  0.796  	|
+| Model/ROC-AUC                 	| Human 	| Mouse 	|  Dog  	| Opossum 	|
+|-------------------------------	|:-----:	|:-----:	|:-----:	|:-------:	|
+| Cohn et al.                   	|  0.80 	|  0.78 	|  0.77 	|   0.72  	|
+| Genomic-ULMFiT 5-mer Stride 2 	| 0.812 	| 0.871 	| 0.773 	|  0.787  	|
+| Genomic-ULMFiT 4-mer Stride 2 	| 0.804 	| __0.876__ 	| 0.771 	|  0.786  	|
+| Genomic-ULMFiT 3-mer Stride 1 	| __0.819__ 	| 0.875 	| __0.788__ 	|  __0.798__  	|
 
 [Data Source](https://github.com/cohnDikla/enhancer_CNN)
 
