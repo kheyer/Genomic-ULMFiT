@@ -206,3 +206,90 @@ def get_model_clas(data, drop_mult, config, lin_ftrs=None, ps=None, bptt=70, max
     learn = RNNLearner(data, model, split_func=awd_lstm_clas_split, wd=wd)
     
     return learn
+
+
+class SequenceShuffler():
+    def __init__(self, sequence, lengths, sequence_class, tss_loc=None, inserts=None, gen_rand=False):
+        
+        if inserts is not None:
+            assert len(lengths) == len(inserts), "Number of inserts should match number of kmer lengths"
+            assert all(len(inserts[i]) == lengths[i] for i in range(len(lengths))), "Each insert kmer must match kmer length list"
+        
+        self.inserts = inserts
+        self.sequence = sequence
+        self.lengths = lengths
+        self.sequence_class = sequence_class
+        self.gen_rand = gen_rand
+        self.tss_loc = tss_loc
+        self.get_dfs()
+
+    def rand_sequence(self, length):
+        return ''.join(random.choice('CGTA') for _ in range(length))
+    
+    def shuffle_section(self, length, idx):
+        if self.const_insert:
+            insert = self.const_insert
+        else:
+            insert = self.rand_sequence(length)
+            
+        return (''.join([self.sequence[:idx], insert, self.sequence[idx+length:]]), insert)
+    
+    def get_shuffles(self, length):
+        seqs = []
+        idxs = []
+        inserts = []
+
+        for i in range(len(self.sequence)-length+1):
+            seq, insert = self.shuffle_section(length, i)
+            seqs.append(seq)
+            inserts.append(insert)
+            idxs.append(i)
+
+        return (seqs, idxs, inserts)
+    
+    def get_shuffle_df(self, length):
+        
+        if self.inserts is not None:
+            self.const_insert = self.inserts[self.lengths.index(length)]
+        
+        elif not self.gen_rand:
+            self.const_insert = self.rand_sequence(length)
+            
+        else:
+            self.const_insert = False
+        
+        seqs, idxs, inserts = self.get_shuffles(length)
+
+        seq_df = pd.DataFrame(seqs, columns=['Sequence'])
+        seq_df['length'] = length
+        seq_df['position'] = idxs
+        seq_df['insert'] = inserts
+
+        return seq_df
+    
+    def get_dfs(self):
+        self.df = pd.concat([self.get_shuffle_df(i) for i in self.lengths])
+        self.df['Promoter'] = self.sequence_class
+        
+    def get_predictions(self, learner, path, train_df, tok, model_vocab):
+        data = GenomicTextClasDataBunch.from_df(path, train_df, self.df, tokenizer=tok, vocab=model_vocab,
+                                                    text_cols='Sequence', label_cols='Promoter', bs=300)
+        learn.data = data
+        preds = learn.get_preds(ordered=True)
+        self.df['Prob'] = preds[0][:,1]
+        
+    def plot_results(self):
+        plt.figure(figsize=(15,8))
+        palette = sns.color_palette("mako_r", len(self.lengths))
+        ax = sns.lineplot(x="position", y="Prob", data=self.df, hue='length', palette=palette)
+        if self.tss_loc is not None:
+            plt.axvline(self.tss_loc, color='r')
+
+def plot_shuffle(idx, lengths, tss=None, inserts=None, gen_rand=False, ret=False):
+    SeqShuffle = SequenceShuffler(classification_df.Sequence[idx], lengths, classification_df.Promoter[idx],
+                                  tss_loc=tss, inserts=inserts, gen_rand=gen_rand)
+    SeqShuffle.get_predictions(learn, path, train_df, tok, model_vocab)
+    SeqShuffle.plot_results()
+    
+    if ret:
+        return SeqShuffle
