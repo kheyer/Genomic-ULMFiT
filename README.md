@@ -26,6 +26,8 @@ The Genomic-ULMFiT method performs well at the task of classifying promoter sequ
   | Genomic ensemble pretraining 	|   0.973  	|   0.980   	|  0.966 	|          0.947          	|
  
 Data generation described in [notebook](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Bacteria/E.%20Coli/E.%20coli%200%20Data%20Processing.ipynb)
+
+[Notebook Directory](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Bacteria/E.%20Coli)
   
   
 Classification performance on human promoters is competitive with published results
@@ -44,6 +46,8 @@ For the short promoter sequences, using data from [Recognition of Prokaryotic an
 
 [Data Source](https://github.com/solovictor/CNNPromoterData)
 
+[Notebook Directory](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Mammals/Human/Promoter%20Classification%20Short%20Sequences)
+
 #### Human Promoters (long)
 For the long promoter sequences, using data from [PromID: Human Promoter Prediction by Deep Learning](https://arxiv.org/pdf/1810.01414.pdf):
 
@@ -57,6 +61,8 @@ For the long promoter sequences, using data from [PromID: Human Promoter Predict
 
 Data generation described in [notebook](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Mammals/Human/Promoter%20Classification%20Long%20Sequences/Human%20Promoters%20Long%20Sequences%200%20Data%20Processing.ipynb)
 
+[Notebook Directory](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Mammals/Human/Promoter%20Classification%20Long%20Sequences)
+
 #### Other Bacterial Promoters
 This table shows results on data from [Recognition of prokaryotic and eukaryotic promoters using convolutional deep learning neural networks](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0171410). These results show how CNN based methods can sometimes perform better when training on small datasets.
 
@@ -68,6 +74,8 @@ This table shows results on data from [Recognition of prokaryotic and eukaryotic
 | Genomic-ULMFiT 	| B. subtilis 	|        1050       	|   0.905  	|   0.857   	|  0.789 	|          0.759          	|     0.95    	|
 
 [Data Source](https://github.com/solovictor/CNNPromoterData)
+
+[Notebook Directory](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Bacteria/Bacterial%20Ensemble/Promoter%20Classification)
 
 
 ## Metaganomics Classification
@@ -83,6 +91,8 @@ Genomic-ULMFiT shows improved performance on the metagenomics taxonomic dataset 
 
 [Data Source](https://github.com/IcarPA-TBlab/MetagenomicDC)
 
+[Notebook Directory](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Bacteria/Bacterial%20Ensemble/Metagenomics%20Classification)
+
 
 ## Enhancer Classification
 When trained on a dataset of mammalian enhancer sequences from [Enhancer Identification using Transfer and Adversarial Deep Learning of DNA Sequences](https://www.biorxiv.org/content/biorxiv/early/2018/02/14/264200.full.pdf), Genomic_ULMFiT improves on results from Cohn et al.
@@ -95,6 +105,8 @@ When trained on a dataset of mammalian enhancer sequences from [Enhancer Identif
 | Genomic-ULMFiT 3-mer Stride 1 	| __0.819__ 	| 0.875 	| __0.788__ 	|  __0.798__  	|
 
 [Data Source](https://github.com/cohnDikla/enhancer_CNN)
+
+[Notebook Directory](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Mammals/Mammal%20Ensemble/Enhancer%20Classification)
 
 
 ## Upcoming Experiments
