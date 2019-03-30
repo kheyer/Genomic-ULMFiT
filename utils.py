@@ -6,6 +6,7 @@ from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 from Bio.SeqFeature import FeatureLocation, CompoundLocation
 import networkx as nx
+import seaborn as sns
 
 def process_fasta(fname, c1, c2, filter_txt=None):
     genome = SeqIO.parse(fname, 'fasta')
@@ -213,7 +214,8 @@ class SequenceShuffler():
         
         if inserts is not None:
             assert len(lengths) == len(inserts), "Number of inserts should match number of kmer lengths"
-            assert all(len(inserts[i]) == lengths[i] for i in range(len(lengths))), "Each insert kmer must match kmer length list"
+            assert all(len(inserts[i]) == lengths[i] 
+                       for i in range(len(lengths))), "Each insert kmer must match kmer length list"
         
         self.inserts = inserts
         self.sequence = sequence
@@ -263,6 +265,7 @@ class SequenceShuffler():
         seq_df = pd.DataFrame(seqs, columns=['Sequence'])
         seq_df['length'] = length
         seq_df['position'] = idxs
+        seq_df['plot_position'] = seq_df['position'].map(lambda x: x + length/2)
         seq_df['insert'] = inserts
 
         return seq_df
@@ -271,25 +274,17 @@ class SequenceShuffler():
         self.df = pd.concat([self.get_shuffle_df(i) for i in self.lengths])
         self.df['Promoter'] = self.sequence_class
         
-    def get_predictions(self, learner, path, train_df, tok, model_vocab):
+    def get_predictions(self, learn, path, train_df, tok, model_vocab, label):
+        self.df.columns = [label if x=='Promoter' else x for x in self.df.columns]
         data = GenomicTextClasDataBunch.from_df(path, train_df, self.df, tokenizer=tok, vocab=model_vocab,
-                                                    text_cols='Sequence', label_cols='Promoter', bs=300)
+                                                    text_cols='Sequence', label_cols=label, bs=300)
         learn.data = data
         preds = learn.get_preds(ordered=True)
-        self.df['Prob'] = preds[0][:,1]
+        self.df['Probability'] = preds[0][:,1]
         
     def plot_results(self):
         plt.figure(figsize=(15,8))
         palette = sns.color_palette("mako_r", len(self.lengths))
-        ax = sns.lineplot(x="position", y="Prob", data=self.df, hue='length', palette=palette)
+        ax = sns.lineplot(x="plot_position", y="Probability", data=self.df, hue='length', palette=palette)
         if self.tss_loc is not None:
             plt.axvline(self.tss_loc, color='r')
-
-def plot_shuffle(idx, lengths, tss=None, inserts=None, gen_rand=False, ret=False):
-    SeqShuffle = SequenceShuffler(classification_df.Sequence[idx], lengths, classification_df.Promoter[idx],
-                                  tss_loc=tss, inserts=inserts, gen_rand=gen_rand)
-    SeqShuffle.get_predictions(learn, path, train_df, tok, model_vocab)
-    SeqShuffle.plot_results()
-    
-    if ret:
-        return SeqShuffle
