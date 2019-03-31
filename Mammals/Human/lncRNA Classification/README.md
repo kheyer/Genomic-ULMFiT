@@ -20,6 +20,6 @@ Results compared to Hill et al.:
 | GRU (Hill et al.)*             	| Challenge Test Set 	|   0.88   	|     __0.95__    	|     0.80    	|  0.75 	|
 | Genomic ULMFiT (3mer stride 1) 	| Challenge Test Set 	|   __0.90__   	|    0.944    	|    __0.871__    	| __0.817__ 	|
 
-* Hill et al. presented their results as a plot rather than as a data table. Values in the above table are estimated by reading off the plot, but may not be precise
+* Hill et al. presented their results as a plot rather than as a data table. Values in the above table are estimated by reading off the plot
 
 The GRU by Hill et al. shows slightly higher specificity, but Genomic ULMFiT produces a model with much better sensitivity. 
