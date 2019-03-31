@@ -109,6 +109,23 @@ When trained on a dataset of mammalian enhancer sequences from [Enhancer Identif
 [Notebook Directory](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Mammals/Mammal%20Ensemble/Enhancer%20Classification)
 
 
+# mRNA/lncRNA Classification
+This table shows results for training a classification model on a dataset of coding mRNA sequences and long noncoding RNA (lncRNA) sequences. The dataset comes from [A deep recurrent neural network discovers complex biological rules to decipher RNA protein-coding potential](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6144860/) by Hill et al. The dataset contains two test sets - a standard test set and a challenge test set.
+
+| Model                          	| Test Set           	| Accuracy 	| Specificity 	| Sensitivity 	| MCC   	|
+|--------------------------------	|--------------------	|----------	|-------------	|-------------	|-------	|
+| GRU Ensemble (Hill et al.)*     | Standard Test Set  	|   0.96   	|     __0.97__    	|     0.95     	|  0.92 	|
+| Genomic ULMFiT (3mer stride 1) 	| Standard Test Set  	|   __0.963__  	|    0.952    	|    __0.974__    	| __0.926__ 	|
+| GRU Ensemble (Hill et al.)*     | Challenge Test Set 	|   0.875   	|     __0.95__    	|     0.80    	|  0.75 	|
+| Genomic ULMFiT (3mer stride 1) 	| Challenge Test Set 	|   __0.90__   	|    0.944    	|    __0.871__    	| __0.817__ 	|
+
+* Hill et al. presented their results as a plot rather than as a data table. Values in the above table are estimated by reading off the plot
+
+[Data Source](https://osf.io/4htpy/)
+
+[Notebook Directory](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Mammals/Human/lncRNA%20Classification)
+
+
 ## Upcoming Experiments
 
 There are a number of other genomic classification domains I intend to explore when time permits.
