@@ -109,7 +109,7 @@ When trained on a dataset of mammalian enhancer sequences from [Enhancer Identif
 [Notebook Directory](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Mammals/Mammal%20Ensemble/Enhancer%20Classification)
 
 
-# mRNA/lncRNA Classification
+## mRNA/lncRNA Classification
 This table shows results for training a classification model on a dataset of coding mRNA sequences and long noncoding RNA (lncRNA) sequences. The dataset comes from [A deep recurrent neural network discovers complex biological rules to decipher RNA protein-coding potential](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6144860/) by Hill et al. The dataset contains two test sets - a standard test set and a challenge test set.
 
 | Model                          	| Test Set           	| Accuracy 	| Specificity 	| Sensitivity 	| MCC   	|
@@ -124,6 +124,13 @@ This table shows results for training a classification model on a dataset of cod
 [Data Source](https://osf.io/4htpy/)
 
 [Notebook Directory](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Mammals/Human/lncRNA%20Classification)
+
+
+## Interpreting Results
+One way to gain insight into how the classification model makes decisions is to perturb regions of a given input sequence to see how changing different regions of the sequence impact the classification result. This allows us to create plots like the one below, highlighting important sequence regions for classification. More detail on interpretations can be found in the [Model Interpretations](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Model%20Interpretations) directory.
+
+![](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Model%20Interpretations/media/coli_interp.png)
+
 
 
 ## Upcoming Experiments
