@@ -13,6 +13,8 @@ The authors of the paper host their data in this [repo](https://github.com/solov
 __Promoter Classification Short Sequences__ details training classification models on long (-500/500) sequences of human promoters. The 
 long promoters dataset allows us to compare the model to [PromID: human promoter prediction by deep learning](https://arxiv.org/pdf/1810.01414.pdf).
 
+__lncRNA Classification__ details training a classification model on human coding mRNA and long noncoding RNA (lncRNA). The dataset used comes from the paper [A deep recurrent neural network discovers complex biological rules to decipher RNA protein-coding potential](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6144860/) by Hill et al. and is available for download [here](https://osf.io/4htpy/).
+
 #### Some notes on the datasets used
 In the short promoter paper, the authors use two separate datasets for promoters. One for promoters containing the `TATA` motif and one 
 for promoters that don't. Only the non-tata dataset was hosted online, so only that data will be used for comparison.
@@ -45,6 +47,15 @@ For the long promoter dataset:
 | With Pretraining                 	|  -500/500 	|   Single Model   	|   0.888  	|    __0.90__   	|  0.824 	|          0.770          	|
 | With Pretraining and Fine Tuning 	|  -500/500 	|   Single Model   	|   __0.892__  	|   0.877   	|  __0.865__ 	|          __0.778__          	|
 
+For the lncRNA dataset:
 
+| Model                          	| Test Set           	| Accuracy 	| Specificity 	| Sensitivity 	| MCC   	|
+|--------------------------------	|--------------------	|----------	|-------------	|-------------	|-------	|
+| GRU (Hill et al.)*             	| Standard Test Set  	|   0.96   	|     __0.97__    	|     0.9     	|  0.92 	|
+| Genomic ULMFiT (3mer stride 1) 	| Standard Test Set  	|   __0.963__  	|    0.952    	|    __0.974__    	| __0.926__ 	|
+| GRU (Hill et al.)*             	| Challenge Test Set 	|   0.88   	|     __0.95__    	|     0.80    	|  0.75 	|
+| Genomic ULMFiT (3mer stride 1) 	| Challenge Test Set 	|   __0.90__   	|    0.944    	|    __0.871__    	| __0.817__ 	|
+
+* Hill et al. presented their results as a plot rather than as a data table. Values in the above table are estimated by reading off the plot
 
 
