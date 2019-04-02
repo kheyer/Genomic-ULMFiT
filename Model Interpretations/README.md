@@ -25,6 +25,6 @@ A sample long human promoter:
 
 We can also look at how the model performs when predicting over a long contiguous sequence instead of curated sequence segments. This process is demonstrated in the __Long Sequence Prediction E. coli__ notebook.
 
-Here is a long prediction section visualized:
+Here is a long prediction section visualized. Red lines show gene start locations. Blue shows the model's predicted output for that region.
 
 ![](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Model%20Interpretations/media/prediction_plot.png)
