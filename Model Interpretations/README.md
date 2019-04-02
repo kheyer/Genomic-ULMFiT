@@ -20,3 +20,7 @@ A sample long human promoter:
 ![](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Model%20Interpretations/media/human_interp.png)
 
 (Note the difference in Y axis scales in the two images)
+
+# Long Sequence Prediction
+
+We can also look at how the model performs when predicting over a long contiguous sequence instead of curated sequence segments. This process is demonstrated in the __Long Sequence Prediction E. coli__ notebook.
