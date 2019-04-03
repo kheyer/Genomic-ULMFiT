@@ -1,6 +1,6 @@
 # Genomic ULMFiT
 
-This is an implementation of [ULMFiT](https://arxiv.org/abs/1801.06146) for genomics classification using Pytorch and Fastai.
+This is an implementation of [ULMFiT](https://arxiv.org/abs/1801.06146) for genomics classification using Pytorch and Fastai. The model architecture used is based on the [AWD-LSTM](https://arxiv.org/abs/1708.02182) model, consisting of an embedding, three LSTM layers, and a final set of linear layers.
 
 The ULMFiT approach uses three training phases to produce a classification model:
   1. Train a language model on a large, unlabeled corpus
