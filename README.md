@@ -174,5 +174,3 @@ I'm planning on doing a more structured literature review of deep learning for g
 [Recurrent Neural Network for Predicting Transcription Factor Binding Sites](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6189047/)
 
 [Learning the Language of the Genome using RNNs](https://cs224d.stanford.edu/reports/jessesz.pdf)
-
-[A deep recurrent neural network discovers complex biological rules to decipher RNA protein-coding potential](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6144860/)
