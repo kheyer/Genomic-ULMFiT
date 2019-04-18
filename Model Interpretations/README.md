@@ -28,3 +28,9 @@ We can also look at how the model performs when predicting over a long contiguou
 Here is a long prediction section visualized. Red lines show gene start locations. Blue shows the model's predicted output for that region.
 
 ![](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Model%20Interpretations/media/prediction_plot.png)
+
+# Embedding TSNE
+
+One way of examining how the model processes genomic sequences is to run TSNE clustering on the embedding matrix that maps k-mers to vectors. The image below shows TSNE clustering of k-mers of length 3. Points are colored by the identity of the first two bases of the k-mer. The plot shows how k-mers sharing a common first two bases tend to be closer together in vector space.
+
+![](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Model%20Interpretations/media/embedding_tsne.png)
