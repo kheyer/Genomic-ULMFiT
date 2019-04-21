@@ -12,7 +12,7 @@ The notebooks in this folder look at training a classification model using the d
 
 Notebook __1__ trains a naive baseline model. This model trains from scratch using only the promoter sequences dataset.
 
-Notebook __2__ trains the classification model initialized with a pretrained [human genome language model](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Mammals/Human/Genomic%20Language%20Models).
+Notebook __2__ trains the classification model initialized with a pre-trained [human genome language model](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Mammals/Human/Genomic%20Language%20Models).
 
 Notebook __3__ first fine tunes the human genome language model on the promoter corpus, then trains a classification model intitialized with 
 the fine tuned language model. The 5-mer stride 2 language model is used.
@@ -30,8 +30,8 @@ Results compared to Umarov et al.:
 | Umarov et al.                           	| -1000/500 	|      -      	| 2 Model Ensemble 	|     -    	|   0.636   	|  0.802 	|          0.714          	|
 | Umarov et al.                           	|  -200/400 	|      -      	| 2 Model Ensemble 	|     -    	|   0.769   	|  0.755 	|          0.762          	|
 | Naive Model                             	|  -500/500 	|     5/2     	|   Single Model   	|   0.858  	|   0.877   	|  0.772 	|          0.708          	|
-| With Pretraining                        	|  -500/500 	|     5/2     	|   Single Model   	|   0.888  	|   __0.902__   	|  0.824 	|          0.770          	|
-| With Pretraining and Fine Tuning (5mer) 	|  -500/500 	|     5/2     	|   Single Model   	|   0.889  	|   0.886   	|  0.846 	|          0.772          	|
-| With Pretraining and Fine Tuning (4mer) 	|  -500/500 	|     4/2     	|   Single Model   	|   0.892  	|   0.877   	|  __0.865__ 	|          0.778          	|
-| With Pretraining and Fine Tuning (8mer) 	|  -500/500 	|     8/3     	|   Single Model   	|   0.874  	|   0.889   	|  0.802 	|          0.742          	|
-| With Pretraining and Fine Tuning (1mer) 	|  -500/500 	|     1/1     	|   Single Model   	|   __0.894__  	|   0.900   	|  0.844 	|          __0.784__          	|
+| With Pre-Training                        	|  -500/500 	|     5/2     	|   Single Model   	|   0.888  	|   __0.902__   	|  0.824 	|          0.770          	|
+| With Pre-Training and Fine Tuning (5mer) 	|  -500/500 	|     5/2     	|   Single Model   	|   0.889  	|   0.886   	|  0.846 	|          0.772          	|
+| With Pre-Training and Fine Tuning (4mer) 	|  -500/500 	|     4/2     	|   Single Model   	|   0.892  	|   0.877   	|  __0.865__ 	|          0.778          	|
+| With Pre-Training and Fine Tuning (8mer) 	|  -500/500 	|     8/3     	|   Single Model   	|   0.874  	|   0.889   	|  0.802 	|          0.742          	|
+| With Pre-Training and Fine Tuning (1mer) 	|  -500/500 	|     1/1     	|   Single Model   	|   __0.894__  	|   0.900   	|  0.844 	|          __0.784__          	|
