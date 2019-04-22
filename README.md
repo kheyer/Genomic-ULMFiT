@@ -9,7 +9,7 @@ The ULMFiT approach uses three training phases to produce a classification model
   
 This method is particularly advantageous for genomic data, where large amounts of unlabeled data is abundant and labeled data is scarce. The ULMFiT approach allows us to train a model on a large, unlabeled genomic corpus in an unsupervised fashion. The pre-trained language model serves as a feature extractor for parsing genomic data.
 
-Typical deep learning approaches to genomics classification are highly restricted to whatever labeled data is available. Models are usually trained from scratch on small datasets, leading to problems with overfitting. When unsupervised pre-training is used, it is typically done only on the classification dataset or on synthetically generated data. The Genomic-ULMFiT approach uses genome scale corpuses for pretraining to produce better feature extractors than we would get by training only on the classification corpus.
+Typical deep learning approaches to genomics classification are highly restricted to whatever labeled data is available. Models are usually trained from scratch on small datasets, leading to problems with overfitting. When unsupervised pre-training is used, it is typically done only on the classification dataset or on synthetically generated data. The Genomic-ULMFiT approach uses genome scale corpuses for pre-training to produce better feature extractors than we would get by training only on the classification corpus.
 
 This method is still in development, but here are some preliminary results, both positive and negative:
 
@@ -17,13 +17,13 @@ This method is still in development, but here are some preliminary results, both
 ## Promoter Classification
 
 #### E. coli promoters
-The Genomic-ULMFiT method performs well at the task of classifying promoter sequences from random sections of the genome. The process of unsupervised pretraining and fine-tuning has a clear impact on the performance of the classification model
+The Genomic-ULMFiT method performs well at the task of classifying promoter sequences from random sections of the genome. The process of unsupervised pre-training and fine-tuning has a clear impact on the performance of the classification model
 
   | Model                        	| Accuracy 	| Precision 	| Recall 	| Correlation Coefficient 	|
   |------------------------------	|:--------:	|:---------:	|:------:	|:-----------------------:	|
   | Naive                        	|   0.834  	|   0.847   	|  0.816 	|          0.670          	|
-  | E. coli genome pretraining   	|   0.919  	|   0.941   	|  0.893 	|          0.839          	|
-  | Genomic ensemble pretraining 	|   0.973  	|   0.980   	|  0.966 	|          0.947          	|
+  | E. coli Genome Pre-Training   	|   0.919  	|   0.941   	|  0.893 	|          0.839          	|
+  | Genomic Ensemble Pre-Training 	|   0.973  	|   0.980   	|  0.966 	|          0.947          	|
  
 Data generation described in [notebook](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Bacteria/E.%20Coli/E.%20coli%200%20Data%20Processing.ipynb)
 
@@ -39,10 +39,10 @@ For the short promoter sequences, using data from [Recognition of Prokaryotic an
 |----------------------------------	|----------	|-------------	|----------	|-----------	|--------	|-------------------------	|-------------	|
 | Kh et al.                        	| -200/50  	|      -      	|     -    	|     -     	|   0.9  	|           0.89          	|     0.98    	|
 | Naive Model                      	| -200/50  	|     5/2     	|   0.80   	|    0.74   	|  0.80  	|           0.59          	|     0.80    	|
-| With Pretraining                 	| -200/50  	|     5/2     	|   0.922  	|   0.963   	|  0.849 	|          0.844          	|    0.976    	|
-| With Pretraining and Fine Tuning 	| -200/50  	|     5/2     	|   .977   	|    .959   	|  .989  	|           .955          	|     .969    	|
-| With Pretraining and Fine Tuning 	| -200/50  	|     5/1     	|   .990   	|    .983   	|  .995  	|           .981          	|     .987    	|
-| With Pretraining and Fine Tuning 	| -200/50  	|     3/1     	|   __.995__   	|    __.992__   	|  __.996__  	|           __.991__          	|     __.994__    	|
+| With Pre-Training                 	| -200/50  	|     5/2     	|   0.922  	|   0.963   	|  0.849 	|          0.844          	|    0.976    	|
+| With Pre-Training and Fine Tuning 	| -200/50  	|     5/2     	|   .977   	|    .959   	|  .989  	|           .955          	|     .969    	|
+| With Pre-Training and Fine Tuning 	| -200/50  	|     5/1     	|   .990   	|    .983   	|  .995  	|           .981          	|     .987    	|
+| With Pre-Training and Fine Tuning 	| -200/50  	|     3/1     	|   __.995__   	|    __.992__   	|  __.996__  	|           __.991__          	|     __.994__    	|
 
 [Data Source](https://github.com/solovictor/CNNPromoterData)
 
@@ -56,8 +56,8 @@ For the long promoter sequences, using data from [PromID: Human Promoter Predict
 | Umarov et al.                    	| -1000/500 	| 2 Model Ensemble 	|     -    	|   0.636   	|  0.802 	|          0.714          	|
 | Umarov et al.                    	|  -200/400 	| 2 Model Ensemble 	|     -    	|   0.769   	|  0.755 	|          0.762          	|
 | Naive Model                      	|  -500/500 	|   Single Model   	|   0.858  	|   0.877   	|  0.772 	|          0.708          	|
-| With Pretraining                 	|  -500/500 	|   Single Model   	|   0.888  	|    __0.90__   	|  0.824 	|          0.770          	|
-| With Pretraining and Fine Tuning 	|  -500/500 	|   Single Model   	|   __0.892__  	|   0.877   	|  __0.865__ 	|          __0.778__          	|
+| With Pre-Training                 	|  -500/500 	|   Single Model   	|   0.888  	|    __0.90__   	|  0.824 	|          0.770          	|
+| With Pre-Training and Fine Tuning 	|  -500/500 	|   Single Model   	|   __0.892__  	|   0.877   	|  __0.865__ 	|          __0.778__          	|
 
 Data generation described in [notebook](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Mammals/Human/Promoter%20Classification%20Long%20Sequences/Human%20Promoters%20Long%20Sequences%200%20Data%20Processing.ipynb)
 
