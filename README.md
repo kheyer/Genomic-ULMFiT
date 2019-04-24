@@ -11,8 +11,10 @@ This method is particularly advantageous for genomic data, where large amounts o
 
 Typical deep learning approaches to genomics classification are highly restricted to whatever labeled data is available. Models are usually trained from scratch on small datasets, leading to problems with overfitting. When unsupervised pre-training is used, it is typically done only on the classification dataset or on synthetically generated data. The Genomic-ULMFiT approach uses genome scale corpuses for pre-training to produce better feature extractors than we would get by training only on the classification corpus.
 
-This method is still in development, but here are some preliminary results, both positive and negative:
+For a deep dive into the ULMFiT approach, model architectures, regularization and training strategies, see the [Methods Long Form](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Methods/Methods%20Long%20Form.ipynb) document in the Methods section.
 
+# Results
+Performance of Genomic-ULMFiT relative to other methods
 
 ## Promoter Classification
 
