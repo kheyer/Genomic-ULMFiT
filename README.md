@@ -147,7 +147,7 @@ There are a number of other genomic classification domains I intend to explore w
   
 ## Relevant Literature
 
-I'm planning on doing a more structured literature review of deep learning for genomic classification and how they compare to Genomic_ULMFiT. For now, here are links to relevant papers.
+For a comparison to other published methods, see Section 6 of the [Methods](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Methods/Methods%20Long%20Form.ipynb) notebook. Here are some relevant papers in the deep genomics classification space.
 
 [DeepCRISPR: optimized CRISPR guide RNA design by deep learning](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6020378/)
 
