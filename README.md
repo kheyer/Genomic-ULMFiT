@@ -138,12 +138,6 @@ One way to gain insight into how the classification model makes decisions is to 
 Inference on long, unlabeled sequences can be done by breaking the input sequence into chunks and plotting prediction results as a function of length. The image below shows a sample prediction of promoter locations on a 40,000 bp region of the E. coli genome. True promoter locations are shown in red. More detail can be found in this [notebook](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Model%20Interpretations/Long%20Sequence%20Prediction%20E.%20coli.ipynb)
 
 ![](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Model%20Interpretations/media/prediction_plot.png)
-
-
-## Upcoming Experiments
-
-There are a number of other genomic classification domains I intend to explore when time permits.
-  * Classification from raw NGS data
   
 ## Relevant Literature
 
