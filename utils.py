@@ -190,7 +190,7 @@ def get_model_LM(data, drop_mult, config, wd=1e-2):
     
     return learn
 
-def get_model_clas(data, drop_mult, config, lin_ftrs=None, ps=None, bptt=70, max_len=20*70, wd=1e-2):
+def get_model_clas(data, drop_mult, config, lin_ftrs=None, ps=None, bptt=70, max_len=20*70, wd=1e-2, clip=None):
     n_class = data.c
     vocab_size = len(data.vocab.stoi)
     for k in config.keys(): 
@@ -204,7 +204,7 @@ def get_model_clas(data, drop_mult, config, lin_ftrs=None, ps=None, bptt=70, max
     encoder = MultiBatchEncoder(bptt, max_len, AWD_LSTM(vocab_size, **config))
     model = SequentialRNN(encoder, PoolingLinearClassifier(layers, ps))
     
-    learn = RNNLearner(data, model, split_func=awd_lstm_clas_split, wd=wd)
+    learn = RNNLearner(data, model, split_func=awd_lstm_clas_split, wd=wd, clip=clip)
     
     return learn
 
