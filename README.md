@@ -129,7 +129,7 @@ This table shows results for training a classification model on a dataset of cod
 
 
 ## Interpreting Results
-One way to gain insight into how the classification model makes decisions is to perturb regions of a given input sequence to see how changing different regions of the sequence impact the classification result. This allows us to create plots like the one below, highlighting important sequence regions for classification. In the plot below, the red line corresponds to a true transcripotion start site. The plot shows how prediction results are sensitive to changes around that location. More detail on interpretations can be found in the [Model Interpretations](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Model%20Interpretations) directory.
+One way to gain insight into how the classification model makes decisions is to perturb regions of a given input sequence to see how changing different regions of the sequence impact the classification result. This allows us to create plots like the one below, highlighting important sequence regions for classification. In the plot below, the red line corresponds to a true transcription start site. The plot shows how prediction results are sensitive to changes around that location. More detail on interpretations can be found in the [Model Interpretations](https://github.com/kheyer/Genomic-ULMFiT/tree/master/Model%20Interpretations) directory.
 
 ![](https://github.com/kheyer/Genomic-ULMFiT/blob/master/Model%20Interpretations/media/coli_interp.png)
 
