@@ -17,10 +17,28 @@ H3K27ac. Negative examples are genomic regions showing no H3K27ac marks.
 
 ## Results and Comparisons
 
-The Genomic-ULMFiT process performed poorly on the enhancer dataset. Work on improving performance is ongoing.
+Genomic-ULMFiT shows improved results over Cohn. et al.
 
-| Model                	| Human 	| Mouse 	|  Dog  	| Opossum 	|
-|----------------------	|:-----:	|:-----:	|:-----:	|:-------:	|
-| Cohn et al.          	| __0.975__ 	| __0.965__ 	| __0.963__ 	|  __0.946__  	|
-| 4-mer Genomic-ULMFiT 	| 0.809 	| 0.863 	| 0.790 	|  0.799  	|
-| 5-mer Genomic-ULMFiT 	| 0.801 	| 0.861 	| 0.784 	|  0.796  	|
+| Model/ROC-AUC                 	| Human 	| Mouse 	|  Dog  	| Opossum 	|
+|-------------------------------	|:-----:	|:-----:	|:-----:	|:-------:	|
+| Cohn et al.                   	|  0.80 	|  0.78 	|  0.77 	|   0.72  	|
+| Genomic-ULMFiT 5-mer Stride 2 	| 0.812 	| 0.871 	| 0.773 	|  0.787  	|
+| Genomic-ULMFiT 4-mer Stride 2 	| 0.804 	| __0.876__ 	| 0.771 	|  0.786  	|
+| Genomic-ULMFiT 3-mer Stride 1 	| __0.819__ 	| 0.875 	| __0.788__ 	|  __0.798__  	|
+
+Here are more detailed metrics for the Genomic-ULMFiT models:
+
+| Organism/Model 	|           	| 4-mer stride 2 	| 5-mer stride 2 	| 3-mer stride 1 	|
+|----------------	|-----------	|----------------	|----------------	|----------------	|
+| Human          	| Accuracy  	|      .733      	|      .726      	|      .736      	|
+|                	| Precision 	|      .716      	|      .717      	|      .719      	|
+|                	| Recall    	|      .771      	|      .745      	|      .775      	|
+| Mouse          	| Accuracy  	|      .795      	|      .792      	|      .800      	|
+|                	| Precision 	|      .786      	|      .802      	|      .789      	|
+|                	| Recall    	|      .810      	|      .774      	|      .819      	|
+| Dog            	| Accuracy  	|      .706      	|      .704      	|      .716      	|
+|                	| Precision 	|      .688      	|      .703      	|      .722      	|
+|                	| Recall    	|      .753      	|      .706      	|      .705      	|
+| Opossum        	| Accuracy  	|      .711      	|      .708      	|      .724      	|
+|                	| Precision 	|      .712      	|      .715      	|      .733      	|
+|                	| Recall    	|      .707      	|      .691      	|      .705      	|
